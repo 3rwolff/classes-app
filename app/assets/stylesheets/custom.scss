@@ -1,0 +1,63 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+    display: block;
+    height: 800px;
+    background: linear-gradient(45deg, #264D6B 10%, #ddd 100%);
+    padding: 60px;
+}
+
+a {
+    &:hover {
+        transform: scale(1.5);
+        font-weight: bold;
+    }
+}
+
+h1 {
+    color: #264D6B;
+}
+
+p {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+   
+}
+
+img {
+    border-radius: 10px;
+}
+
+.navbar {
+    background-color: #264D6B;
+}
+.title {
+    text-align: center;
+}
+
+.courses_list {
+    list-style: none;
+}
+
+.row {
+    background-color: #ffffff;
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+.course {
+    display: flex;
+}
+
+.course_info {
+    margin-left: 10px;
+}
+
+#header_title {
+    color: white;
+}

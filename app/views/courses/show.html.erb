@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="course">
+
+        <div>
+            <%= image_tag(@course.main_video_id, :alt => "Image of game") %>
+        </div>
+
+        <div class="course_info">
+            <h1><%= @course.name %></h1>
+            <p><%= @course.description %></p>
+            <%= link_to 'Back', root_path %> |
+            <%= link_to 'Edit', edit_course_path %>
+        </div>
+
+    </div>
+</div>

@@ -9,6 +9,18 @@
   </head>
 
   <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <h1 id="header_title">Live Oak Academy</h1>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home", '#' %></li>
+            <li><%= link_to "Help", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <%= yield %>
   </body>
+
 </html>
