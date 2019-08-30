@@ -3,7 +3,7 @@
 
 body {
     display: block;
-    height: 800px;
+    height: 900px;
     background: linear-gradient(45deg, #264D6B 10%, #ddd 100%);
     padding: 60px;
 }
@@ -23,11 +23,16 @@ p {
     background-color: #eee;
     padding: 10px;
     border-radius: 5px;
-   
+    margin-top: 5px;
 }
 
 img {
     border-radius: 10px;
+}
+
+input {
+    margin-bottom: 15px;
+
 }
 
 .navbar {
@@ -43,11 +48,13 @@ img {
 
 .row {
     background-color: #ffffff;
-    width: 80%;
+    width: 90%;
     padding: 10px;
     border-radius: 20px;
-    margin-top: 100px;
     margin-bottom: 10px;
+    &.row_space_top {
+        margin-top: 100px;
+    }
 }
 
 .course {
