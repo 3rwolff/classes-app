@@ -4,7 +4,7 @@ class CreateCourseModules < ActiveRecord::Migration[5.1]
       t.string :title
       t.text :description
       t.string :video_id
-      t.references :Course, foreign_key: true
+      t.references :course, foreign_key: true
 
       t.timestamps
     end

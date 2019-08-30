@@ -1,6 +1,6 @@
 <div class="row row_space_top">
     <h1> Edit the module: <%= @mod.title %></h1>
-    <%= form_for( [@course, @mod] ) do |f| %>
+    <%= form_for [@course, @mod] do |f| %>
       
         <%= f.label :title %>
         <%= f.text_field :title, class: 'form-control' %>

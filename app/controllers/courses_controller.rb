@@ -16,10 +16,10 @@ class CoursesController < ApplicationController
     def update
         @course = Course.find(params[:id]) 
         if @course.update_attributes(course_params)
-          flash[:success] = "Course updated"
-          redirect_to @course
+            flash[:success] = "Course updated"
+            redirect_to @course
         else
-          render 'edit'
+            render 'edit'
         end
     end
 

@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 20190830165312) do
     t.string "title"
     t.text "description"
     t.string "video_id"
-    t.integer "Course_id"
+    t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Course_id"], name: "index_course_modules_on_Course_id"
+    t.index ["course_id"], name: "index_course_modules_on_course_id"
   end
 
   create_table "courses", force: :cascade do |t|
