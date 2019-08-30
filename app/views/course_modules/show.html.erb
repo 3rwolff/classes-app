@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row row_space_top">
+        <div class="side">
+
+            <div>
+                <%= image_tag('no_photo', :alt => "Image of game") %>
+            </div>
+
+            <div class="info">
+                <h1><%= @mod.title %></h1> 
+                <%= link_to 'Back', course_path(@mod.Course_id) %> |
+                <%= link_to 'Edit', edit_course_course_module_path %>
+                <p><%= @mod.description %></p>
+                
+            </div>
+
+        </div>
+        
+   
+
+    </div>
+</div>

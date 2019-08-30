@@ -47,7 +47,7 @@ input {
 }
 
 .row {
-    background-color: #ffffff;
+    background-color: #ffffff70;
     width: 90%;
     padding: 10px;
     border-radius: 20px;
@@ -57,12 +57,25 @@ input {
     }
 }
 
-.course {
+.side {
     display: flex;
 }
 
-.course_info {
+.info {
     margin-left: 10px;
+}
+
+.module_list {
+    border: solid 2px #264D6B;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.module {
+    padding: 10px;
+    background: linear-gradient(45deg, #264D6B 10%, #bbb 100%);
+    margin-bottom: 10px;
+    border-radius: 7px;
 }
 
 #header_title {
