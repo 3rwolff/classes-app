@@ -15,10 +15,6 @@ class CourseModulesController < ApplicationController
             flash[:success] = "Module updated"
             redirect_to course_course_module_path
         else
-            byebug
-            puts '##################'
-            puts @mod.errors.full_messages
-            puts '##################'
             render 'edit'
         end
     end

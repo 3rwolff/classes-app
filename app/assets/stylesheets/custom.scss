@@ -32,7 +32,10 @@ img {
 
 input {
     margin-bottom: 15px;
+}
 
+textarea { 
+    height: 150px !important;
 }
 
 .navbar {
@@ -66,15 +69,15 @@ input {
 }
 
 .module_list {
-    border: solid 2px #264D6B;
-    border-radius: 7px;
     padding: 10px;
 }
 
 .module {
     padding: 10px;
-    background: linear-gradient(45deg, #264D6B 10%, #bbb 100%);
+    background: #999; /*linear-gradient(45deg, #264D6B 10%, #bbb 100%);*/
     margin-bottom: 10px;
+    border: solid 2px #264D6B;
+    border-radius: 7px;
     border-radius: 7px;
 }
 
