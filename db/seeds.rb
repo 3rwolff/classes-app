@@ -1,39 +1,46 @@
 # Users
-User.create!( 
+User.create!( name: "Ricky",
               email: "ricky@bigsouthernsoftware.com",
               password:              "ffffff",
               password_confirmation: "ffffff")
 
+(0..4).each do
+    name = Faker::Name.first_name
+    User.create!( name: name,
+                  email: "#{name}@foo.com",
+                  password:              "ffffff",
+                  password_confirmation: "ffffff")
+end
 
 # Courses
 Course.create!( name: "Breakout",
                 main_video_id: "breakout.png",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.")
+                description: Faker::Lorem.paragraph(sentence_count: 10))
                 
 Course.create!( name: "Asteroids",
                 main_video_id: "asteroids.png",
-                description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.n")
+                description: Faker::Lorem.paragraph(sentence_count: 10))
 
 Course.create!( name: "Pong",
                 main_video_id: "pong.png",
-                description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.")
+                description: Faker::Lorem.paragraph(sentence_count: 10))
 
 # Sections
 # these are out of order to test ording in the app
 CourseModule.create!( title: "Variables & Loops",
-                      description: "Arcu non odio euismod lacinia. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Porta lorem mollis aliquam ut porttitor leo a. Tortor posuere ac ut consequat semper viverra nam libero.",
+                      description: Faker::Lorem.paragraph(sentence_count: 10),
                       video_id: "no_photo.png",
                       course_id: 1,
                       sort_by: 2)
 
 CourseModule.create!( title: "HTML Canvas",
-                      description: "Porttitor rhoncus dolor purus non enim. Orci phasellus egestas tellus rutrum tellus pellentesque eu.",
+                      description: Faker::Lorem.paragraph(sentence_count: 10),
                       video_id: "no_photo.png",
                       course_id: 1,
                       sort_by: 1)
 
 CourseModule.create!( title: "Vectors & Points",
-                      description: "In metus vulputate eu scelerisque felis imperdiet proin. Fermentum et sollicitudin ac orci phasellus. Praesent elementum facilisis leo vel fringilla. ",
+                      description:  Faker::Lorem.paragraph(sentence_count: 10),
                       video_id: "no_photo.png",
                       course_id: 1,
                       sort_by: 3)
