@@ -10,7 +10,7 @@ body {
 
 a {
     &:hover {
-        transform: scale(1.5);
+        transform: scale(1.1);
         font-weight: bold;
     }
 }
@@ -40,6 +40,11 @@ textarea {
     margin-bottom: 5px;
 }
 
+#logo {
+    color: white;
+    font-size: 18pt;
+    text-decoration: none;
+}
 .navbar {
     background-color: #264D6B;
 }
@@ -78,6 +83,7 @@ textarea {
 .row_element {
     padding: 10px;
     background: linear-gradient(45deg, #264D6B20 50%, #264D6B 100%);
+    margin-top: 10px;
     margin-bottom: 10px;
     border: solid 2px #264D6B;
     border-radius: 7px;
@@ -91,4 +97,14 @@ textarea {
 .section_list {
     display: block;
     width: 100%;
+}
+
+/* devise stuff */
+.sessions {
+    display: block;
+    width: 400px;
+    background-color: #ffffff70;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px 5px #264D6B;
 }
