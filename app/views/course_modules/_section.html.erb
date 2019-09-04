@@ -1,17 +1,18 @@
 <div class="section_list">
-    <div>
+
         <% @sections.each do |section| %>
 
-            <div class="side section">
+            <div class="side row_element">
                 <div>
                     <%= image_tag('no_photo', :alt => "Image of module") %>
                 </div>
                 <div class="info">
-                    <h4><%= section.title %>
+                    <h4><%= section.title %></h4>
+                    <%= link_to 'Edit', edit_course_course_module_section_path(@mod.course_id, @mod) %>
                     <p><%= section.description %></p>
                 </div>
             </div>
 
         <% end %>
-    </div>
+    
 </div>

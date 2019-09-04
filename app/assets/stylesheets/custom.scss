@@ -36,6 +36,7 @@ input {
 
 textarea { 
     height: 150px !important;
+    margin-bottom: 5px;
 }
 
 .navbar {
@@ -72,7 +73,7 @@ textarea {
     padding: 10px;
 }
 
-.module {
+.row_element {
     padding: 10px;
     background: #999; /*linear-gradient(45deg, #264D6B 10%, #bbb 100%);*/
     margin-bottom: 10px;
@@ -88,14 +89,4 @@ textarea {
 .section_list {
     display: block;
     width: 100%;
-}
-
-.section {
-    padding: 10px;
-    background: #999; /*linear-gradient(45deg, #264D6B 10%, #bbb 100%);*/
-    margin-bottom: 10px;
-    border: solid 2px #264D6B;
-    border-radius: 7px;
-    border-radius: 7px;
-    
 }

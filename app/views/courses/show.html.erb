@@ -16,21 +16,8 @@
 
         </div>
 
-        <div class="module_list">
-
-            <div>
-                <% @modules.each do |mod| %>
-                    <div class="side module">
-                        <div>
-                            <%= image_tag('no_photo', :alt => "Image of module") %>
-                        </div>
-                        <div class="info">
-                            <h4><%= link_to mod.title, course_course_module_path(@course, mod) %></h4>
-                            <p><%= mod.description %></p>
-                        </div>
-                    </div>
-                <% end %>
-            </div>
+        <div class="list">
+            <%= render 'module' %>
         </div>
 
     </div>
