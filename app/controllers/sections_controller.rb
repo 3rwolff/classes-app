@@ -16,11 +16,7 @@ class SectionsController < ApplicationController
     def update
         if @section.update_attributes(section_params)
             flash[:success] = "Section updated"
-            puts "###############"
-            puts @mod.title
-            puts course_course_module_path( id: @mod.id )
-            puts "###############"
-            redirect_to course_course_module_path( id: @mod.id )
+            redirect_to course_course_module_path( id: @mod.id ) #pass and id to go back to a specific module
         else
             render 'edit'
         end
