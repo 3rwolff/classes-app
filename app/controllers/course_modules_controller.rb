@@ -36,6 +36,6 @@ class CourseModulesController < ApplicationController
         end
 
         def module_params
-            params.require(:course_module).permit(:title, :description, :video_id)
+            params.require(:course_module).permit(:title, :description, :video_id, :sort_by)
         end
 end

@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'faker', '~> 2.2', '>= 2.2.1'
 gem 'table_print','1.5.6'
 gem 'devise', '~> 4.7'
 gem 'bootstrap-will_paginate', '1.0.0'

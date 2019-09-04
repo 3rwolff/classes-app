@@ -19,30 +19,37 @@ Course.create!( name: "Pong",
                 description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.")
 
 # Sections
-CourseModule.create!( title: "HTML Canvas",
-                      description: "Porttitor rhoncus dolor purus non enim. Orci phasellus egestas tellus rutrum tellus pellentesque eu.",
-                      video_id: "no_photo.png",
-                      course_id: 1)
-
+# these are out of order to test ording in the app
 CourseModule.create!( title: "Variables & Loops",
                       description: "Arcu non odio euismod lacinia. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Porta lorem mollis aliquam ut porttitor leo a. Tortor posuere ac ut consequat semper viverra nam libero.",
                       video_id: "no_photo.png",
-                      course_id: 1)
+                      course_id: 1,
+                      sort_by: 2)
+
+CourseModule.create!( title: "HTML Canvas",
+                      description: "Porttitor rhoncus dolor purus non enim. Orci phasellus egestas tellus rutrum tellus pellentesque eu.",
+                      video_id: "no_photo.png",
+                      course_id: 1,
+                      sort_by: 1)
 
 CourseModule.create!( title: "Vectors & Points",
                       description: "In metus vulputate eu scelerisque felis imperdiet proin. Fermentum et sollicitudin ac orci phasellus. Praesent elementum facilisis leo vel fringilla. ",
                       video_id: "no_photo.png",
-                      course_id: 1)
+                      course_id: 1,
+                      sort_by: 3)
 
 # Sections
-Section.create!( title: "Section 1",
-                 description: "Orci phasellus egestas tellus rutrum tellus pellentesque eu. Arcu non odio euismod lacinia.",
-                 course_module_id: 1)
+# just create three sections for each module
+(1..3).each do |i|
+    Section.create!( title: "Section 1",
+                    description: "Orci phasellus egestas tellus rutrum tellus pellentesque eu. Arcu non odio euismod lacinia.",
+                    course_module_id: i)
 
-Section.create!( title: "Section 2",
-                 description: "Porta lorem mollis aliquam ut porttitor leo a. Tortor posuere ac ut consequat semper viverra nam libero.",
-                 course_module_id: 1)
+    Section.create!( title: "Section 2",
+                    description: "Porta lorem mollis aliquam ut porttitor leo a. Tortor posuere ac ut consequat semper viverra nam libero.",
+                    course_module_id: i)
 
-Section.create!( title: "Section 3",
-                 description: "Pulvinar mattis nunc sed blandit libero volutpat sed cras.",
-                 course_module_id: 1)
+    Section.create!( title: "Section 3",
+                    description: "Pulvinar mattis nunc sed blandit libero volutpat sed cras. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+                    course_module_id: i)
+end

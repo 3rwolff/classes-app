@@ -8,7 +8,9 @@
                 </div>
                 <div class="info">
                     <h4><%= section.title %></h4>
-                    <%= link_to 'Edit', edit_course_course_module_section_path(@mod.course_id, @mod, section) %>
+                    <% if user_signed_in? %>
+                        <%= link_to 'Edit', edit_course_course_module_section_path(@mod.course_id, @mod, section) %>
+                    <% end %>
                     <p><%= section.description %></p>
                 </div>
             </div>

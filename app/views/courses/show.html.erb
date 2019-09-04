@@ -8,8 +8,11 @@
 
             <div class="info">
                 <h1><%= @course.name %></h1> 
-                <%= link_to 'Back', root_path %> |
-                <%= link_to 'Edit', edit_course_path %>
+                <% if user_signed_in? %>
+                    <%= link_to 'Back', root_path %> | <%= link_to 'Edit', edit_course_path %>
+                <% else %>
+                    <%= link_to 'Back', root_path %>
+                <% end %>
                 <p><%= @course.description %></p>
                 
             </div>
