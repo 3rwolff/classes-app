@@ -1,0 +1,17 @@
+<div class="section_list">
+    <div>
+        <% @sections.each do |section| %>
+
+            <div class="side section">
+                <div>
+                    <%= image_tag('no_photo', :alt => "Image of module") %>
+                </div>
+                <div class="info">
+                    <h4><%= section.title %>
+                    <p><%= section.description %></p>
+                </div>
+            </div>
+
+        <% end %>
+    </div>
+</div>
