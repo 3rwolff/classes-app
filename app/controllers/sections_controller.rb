@@ -9,9 +9,6 @@ class SectionsController < ApplicationController
 
     def edit
         @section = Section.find(params[:id])
-        puts "###############"
-        puts @section.title
-        puts "###############"
         # here we explicitly call a template because we are never actually vewing the show page of a section like we do for courses and modules
         render 'course_modules/edit_section'
     end
@@ -19,7 +16,11 @@ class SectionsController < ApplicationController
     def update
         if @section.update_attributes(section_params)
             flash[:success] = "Section updated"
-            redirect_to course_course_module_path
+            puts "###############"
+            puts @mod.title
+            puts course_course_module_path( id: @mod.id )
+            puts "###############"
+            redirect_to course_course_module_path( id: @mod.id )
         else
             render 'edit'
         end
