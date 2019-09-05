@@ -1,0 +1,18 @@
+<div class="row row_space_top">
+
+    <h1> Create a new section</h1>
+
+    <%= form_for [@course, @mod, @section] do |f| %>
+      
+        <%= hidden_field_tag :course_module_id, @mod.id %>
+
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
+      
+        <%= f.label :description %>
+        <%= f.text_area :description, class: 'form-control' %>
+
+        <%= f.submit "Update", class: "btn btn-primary" %>
+    <% end %>
+
+</div>

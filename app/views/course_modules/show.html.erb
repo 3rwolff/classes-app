@@ -17,7 +17,14 @@
             </div>
 
         </div>
-        <div class="list_title">Sections</div>
+
+        <div class="list_title">
+            Sections 
+            <%= link_to new_course_course_module_section_path(@mod.course_id, @mod) do %>
+                <i class="fa fa-plus-circle fa-1x scale green_icon"></i>
+            <% end %>
+        </div>
+
         <div class="list">
             <%= render 'section' %>
         </div>

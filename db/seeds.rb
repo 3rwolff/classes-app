@@ -26,18 +26,18 @@ Course.create!( name: "Pong",
                 description: Faker::Lorem.paragraph(sentence_count: 10))
 
 # Sections
-# these are out of order to test ording in the app
-CourseModule.create!( title: "Variables & Loops",
-                      description: Faker::Lorem.paragraph(sentence_count: 10),
-                      video_id: "no_photo.png",
-                      course_id: 1,
-                      sort_by: 2)
 
 CourseModule.create!( title: "HTML Canvas",
                       description: Faker::Lorem.paragraph(sentence_count: 10),
                       video_id: "no_photo.png",
                       course_id: 1,
                       sort_by: 1)
+                      
+CourseModule.create!( title: "Variables & Loops",
+                      description: Faker::Lorem.paragraph(sentence_count: 10),
+                      video_id: "no_photo.png",
+                      course_id: 1,
+                      sort_by: 2)
 
 CourseModule.create!( title: "Vectors & Points",
                       description:  Faker::Lorem.paragraph(sentence_count: 10),
