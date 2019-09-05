@@ -49,14 +49,14 @@ CourseModule.create!( title: "Vectors & Points",
 # just create three sections for each module
 (1..3).each do |i|
     Section.create!( title: "Section 1",
-                    description: "Orci phasellus egestas tellus rutrum tellus pellentesque eu. Arcu non odio euismod lacinia.",
+                    description: Faker::Lorem.paragraph(sentence_count: 8),
                     course_module_id: i)
 
     Section.create!( title: "Section 2",
-                    description: "Porta lorem mollis aliquam ut porttitor leo a. Tortor posuere ac ut consequat semper viverra nam libero.",
+                    description: Faker::Lorem.paragraph(sentence_count: 8),
                     course_module_id: i)
 
     Section.create!( title: "Section 3",
-                    description: "Pulvinar mattis nunc sed blandit libero volutpat sed cras. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+                    description: Faker::Lorem.paragraph(sentence_count: 8),
                     course_module_id: i)
 end

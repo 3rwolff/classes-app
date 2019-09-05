@@ -7,11 +7,19 @@
                     <%= image_tag('no_photo', :alt => "Image of module") %>
                 </div>
                 <div class="info">
-                    <h4><%= section.title %></h4>
+
+                    <div class="title_row">
+                        <%= section.title %>
+                        <%= link_to course_course_module_section_path(@mod.course_id, @mod, section.id), method: :delete, data: {confirm: "Are you sure?" } do %>
+                            <i class="fa fa-trash fa-1x scale"></i>
+                        <% end %>
+                    </div>
+
                     <% if user_signed_in? %>
                         <%= link_to 'Edit', edit_course_course_module_section_path(@mod.course_id, @mod, section) %>
                     <% end %>
                     <p><%= section.description %></p>
+
                 </div>
             </div>
 

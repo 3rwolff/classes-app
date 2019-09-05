@@ -20,6 +20,8 @@ h1 {
     margin: 0px !important;
 }
 
+
+
 p {
     background-color: #eee;
     padding: 10px;
@@ -49,6 +51,11 @@ textarea {
     background-color: #264D6B;
 }
 .title {
+    text-align: center;
+}
+
+.list_title {
+    font-size: 18pt;
     text-align: center;
 }
 
@@ -82,7 +89,7 @@ textarea {
 
 .row_element {
     padding: 10px;
-    background: linear-gradient(45deg, #264D6B20 50%, #264D6B 100%);
+    background: linear-gradient(45deg, #264D6B50 50%, #264D6B 100%);
     margin-top: 10px;
     margin-bottom: 10px;
     border: solid 2px #264D6B;
@@ -107,4 +114,18 @@ textarea {
     padding-bottom: 15px;
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px 5px #264D6B;
+}
+
+.title_row {
+    display: flex;
+    justify-content: space-between;   
+    font-size: 14pt;
+    color: white;
+}
+
+.scale {
+    color: white;
+    &:hover {
+    transform: scale(1.2);
+    }
 }

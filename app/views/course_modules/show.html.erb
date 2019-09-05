@@ -11,13 +11,13 @@
                 <% if user_signed_in? %>
                     <%= link_to 'Back', course_path(@mod.course_id) %> | <%= link_to 'Edit', edit_course_course_module_path %>
                 <% else %>
-                    <%= link_to 'Back', root_path %>
+                    <%= link_to 'Back', course_path(@mod.course_id) %>
                 <% end %> 
                 <p><%= @mod.description %></p>
             </div>
 
         </div>
-        
+        <div class="list_title">Sections</div>
         <div class="list">
             <%= render 'section' %>
         </div>

@@ -22,6 +22,11 @@ class SectionsController < ApplicationController
         end
     end
 
+    def destroy 
+        @section.destroy
+        redirect_to course_course_module_path( id: @mod.id )
+    end
+
     private
 
         def get_section
