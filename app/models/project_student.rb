@@ -1,0 +1,2 @@
+class ProjectStudent < ApplicationRecord
+end

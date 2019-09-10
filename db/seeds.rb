@@ -4,12 +4,30 @@ User.create!( name: "Ricky",
               password:              "ffffff",
               password_confirmation: "ffffff")
 
-(0..4).each do
+User.create!( name: "Fox",
+              email: "fox@bss.com",
+              password:              "ffffff",
+              password_confirmation: "ffffff")
+
+(0..20).each do
     name = Faker::Name.first_name
     User.create!( name: name,
                   email: "#{name}@foo.com",
                   password:              "ffffff",
                   password_confirmation: "ffffff")
+end
+
+# Roles
+Role.create!(name: "Student")
+Role.create!(name: "Teacher")
+Role.create!(name: "Admin")
+
+# User Roles
+UserRole.create!(user_id: 1, role_id: 2) # set Ricky as a teacher
+UserRole.create!(user_id: 2, role_id: 2) # set Fox as a teacher
+
+User.where("id is not 1").each do |user| # set the rest of the users as students
+    UserRole.create!(user_id: user.id , role_id: 1)
 end
 
 # Courses
@@ -69,14 +87,38 @@ end
 end
 
 # Projects (a project is a class with a semester, studens and teacher assigned)
-Project.create(course_id: 1, semester_id: 1)
+Project.create!(course_id: 1, semester_id: 1)
+    ProjectTeacher.create!(user_id: 1, project_id: 1)
+    User.order("RANDOM()").limit(5).each do |student|
+        ProjectStudent.create!(user_id: student.id, project_id: 1)
+    end
 
-Project.create(course_id: 2, semester_id: 2)
+Project.create!(course_id: 2, semester_id: 2)
+    ProjectTeacher.create!(user_id: 1, project_id: 2)
+    User.order("RANDOM()").limit(5).each do |student|
+        ProjectStudent.create!(user_id: student.id, project_id: 2)
+    end
 
-Project.create(course_id: 3, semester_id: 3)
+Project.create!(course_id: 3, semester_id: 3)
+    ProjectTeacher.create!(user_id: 1, project_id: 3)
+    User.order("RANDOM()").limit(5).each do |student|
+        ProjectStudent.create!(user_id: student.id, project_id: 3)
+    end
 
-Project.create(course_id: 1, semester_id: 4)
+Project.create!(course_id: 1, semester_id: 4)
+    ProjectTeacher.create!(user_id: 2, project_id: 4)
+    User.order("RANDOM()").limit(5).each do |student|
+        ProjectStudent.create!(user_id: student.id, project_id: 4)
+    end
 
-Project.create(course_id: 2, semester_id: 5)
+Project.create!(course_id: 2, semester_id: 5)
+    ProjectTeacher.create!(user_id: 2, project_id: 5)
+    User.order("RANDOM()").limit(5).each do |student|
+        ProjectStudent.create!(user_id: student.id, project_id: 5)
+    end
 
-Project.create(course_id: 3, semester_id: 6)
+Project.create!(course_id: 3, semester_id: 6)
+    ProjectTeacher.create!(user_id: 2, project_id: 6)
+    User.order("RANDOM()").limit(5).each do |student|
+        ProjectStudent.create!(user_id: student.id, project_id: 6)
+    end

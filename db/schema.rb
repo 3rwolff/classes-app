@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190910144824) do
+ActiveRecord::Schema.define(version: 20190910172644) do
 
   create_table "course_modules", force: :cascade do |t|
     t.string "title"
@@ -32,6 +32,24 @@ ActiveRecord::Schema.define(version: 20190910144824) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "project_students", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_students_on_project_id"
+    t.index ["user_id"], name: "index_project_students_on_user_id"
+  end
+
+  create_table "project_teachers", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_teachers_on_project_id"
+    t.index ["user_id"], name: "index_project_teachers_on_user_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.integer "course_id"
     t.integer "semester_id"
@@ -39,6 +57,12 @@ ActiveRecord::Schema.define(version: 20190910144824) do
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_projects_on_course_id"
     t.index ["semester_id"], name: "index_projects_on_semester_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sections", force: :cascade do |t|
@@ -56,6 +80,15 @@ ActiveRecord::Schema.define(version: 20190910144824) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["season", "year"], name: "index_semesters_on_season_and_year", unique: true
+  end
+
+  create_table "user_roles", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_user_roles_on_role_id"
+    t.index ["user_id"], name: "index_user_roles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
