@@ -89,36 +89,36 @@ end
 # Projects (a project is a class with a semester, studens and teacher assigned)
 Project.create!(course_id: 1, semester_id: 1)
     ProjectTeacher.create!(user_id: 1, project_id: 1)
-    User.order("RANDOM()").limit(5).each do |student|
+    User.order("RANDOM()").limit(rand(5..10)).each do |student|
         ProjectStudent.create!(user_id: student.id, project_id: 1)
     end
 
 Project.create!(course_id: 2, semester_id: 2)
     ProjectTeacher.create!(user_id: 1, project_id: 2)
-    User.order("RANDOM()").limit(5).each do |student|
+    User.order("RANDOM()").limit(rand(5..10)).each do |student|
         ProjectStudent.create!(user_id: student.id, project_id: 2)
     end
 
 Project.create!(course_id: 3, semester_id: 3)
     ProjectTeacher.create!(user_id: 1, project_id: 3)
-    User.order("RANDOM()").limit(5).each do |student|
+    User.order("RANDOM()").limit(rand(5..10)).each do |student|
         ProjectStudent.create!(user_id: student.id, project_id: 3)
     end
 
 Project.create!(course_id: 1, semester_id: 4)
     ProjectTeacher.create!(user_id: 2, project_id: 4)
-    User.order("RANDOM()").limit(5).each do |student|
+    User.order("RANDOM()").limit(rand(5..10)).each do |student|
         ProjectStudent.create!(user_id: student.id, project_id: 4)
     end
 
 Project.create!(course_id: 2, semester_id: 5)
     ProjectTeacher.create!(user_id: 2, project_id: 5)
-    User.order("RANDOM()").limit(5).each do |student|
+    User.order("RANDOM()").limit(rand(5..10)).each do |student|
         ProjectStudent.create!(user_id: student.id, project_id: 5)
     end
 
 Project.create!(course_id: 3, semester_id: 6)
     ProjectTeacher.create!(user_id: 2, project_id: 6)
-    User.order("RANDOM()").limit(5).each do |student|
+    User.order("RANDOM()").limit(rand(5..10)).each do |student|
         ProjectStudent.create!(user_id: student.id, project_id: 6)
     end

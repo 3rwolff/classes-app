@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @projects = ProjectTeacher.where(user_id: 1)
+    @role = Role.find( UserRole.where( user_id: @user.id ).first.role_id )
+    @teacher_projects = ProjectTeacher.where(user_id: params[:id])
+    @student_projects = ProjectStudent.where(user_id: params[:id])
   end
 end
