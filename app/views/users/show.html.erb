@@ -1,0 +1,27 @@
+<div class="project">
+    <%= link_to 'back', users_path %>
+    <div>
+        Name: <code><%= @user.name %></code>
+    </div>
+    <div>
+        Email: <code><%= @user.email %></code>
+    </div>
+     <div>
+        Role: <code><%=  Role.find( UserRole.where( user_id: @user.id ).first.role_id ).name %></code>
+    </div>
+
+    <table class="table table-striped table-bordered">
+
+    <thead>
+        <td>Project</td>
+    </thead>
+
+    <% @projects.each do |project| %>
+        <tr>
+            <td><%= project.project_id %></td>
+        </tr>
+    <% end %>
+
+    </table>
+
+</div>

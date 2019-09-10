@@ -1,4 +1,5 @@
 <div class="project">
+    <%= link_to 'back', projects_path %>
     <div>
         Name: <code><%= @project.course.name %></code>
     </div>
@@ -8,30 +9,26 @@
      <div>
         Seats: <code><%= @students.count %></code>
     </div>
+    <div>
+        Teacher: <code><%= @teacher.user.name %> | <%= @teacher.user.email %></code>
+    </div>
+    <br/>
+    <div class="title">Students</div>
     <table class="table table-striped table-bordered">
+    
         <thead>
-         <td>
-            #
-        </td>
-         <td>
-            Name
-        </td>
-        <td>
-            Email
-        </td>
+            <td>#</td>
+            <td>Name</td>
+            <td>Email</td>
         </thead>
+
         <% @students.each_with_index do |student, i| %>
-        <tr>
-            <td>
-                <%= i %>
-            </td>
-            <td>
-                <%= student.user.name %>
-            </td>
-            <td>
-                <%= student.user.email %>
-            </td>
-        </tr>
+            <tr>
+                <td><%= i %></td>
+                <td><%= student.user.name %></td>
+                <td><%= student.user.email %></td>
+            </tr>
         <% end %>
+
     </table>
 </div>
