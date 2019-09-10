@@ -122,3 +122,20 @@ Project.create!(course_id: 3, semester_id: 6)
     User.order("RANDOM()").limit(rand(5..10)).each do |student|
         ProjectStudent.create!(user_id: student.id, project_id: 6)
     end
+
+# Glossary Categories
+GlossaryCategory.create!(name: "2D", color_code: "99FFFF")
+GlossaryCategory.create!(name: "3D", color_code: "FFFF99")
+GlossaryCategory.create!(name: "Math", color_code: "99FFFF")
+GlossaryCategory.create!(name: "Code", color_code: "FFFFFF")
+
+# Glossary Items
+GlossaryItem.create!(title: "Class", description: "This is a class")
+GlossaryItem.create!(title: "HTML", description: "This is a HTML")
+GlossaryItem.create!(title: "Loop", description: "This is a Loop")
+GlossaryItem.create!(title: "Recursion", description: "This is a Recursion")
+GlossaryItem.create!(title: "Tag", description: "This is a Tag")
+GlossaryItem.create!(title: "Variable", description: "This is a Variable")
+GlossaryItem.create!(title: "Vector", description: "This is a Vector")
+
+

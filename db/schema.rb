@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190910172644) do
+ActiveRecord::Schema.define(version: 20190910211924) do
 
   create_table "course_modules", force: :cascade do |t|
     t.string "title"
@@ -30,6 +30,22 @@ ActiveRecord::Schema.define(version: 20190910172644) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "glossary_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "color_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "glossary_items", force: :cascade do |t|
+    t.string "title"
+    t.text "definition"
+    t.integer "glossary_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["glossary_category_id"], name: "index_glossary_items_on_glossary_category_id"
   end
 
   create_table "project_students", id: false, force: :cascade do |t|
