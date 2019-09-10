@@ -60,3 +60,23 @@ CourseModule.create!( title: "Vectors & Points",
                     description: Faker::Lorem.paragraph(sentence_count: 8),
                     course_module_id: i)
 end
+
+# Semesters
+(2019..2020).each do |i|
+    Semester.create(season: "Spring", year: i)
+    Semester.create(season: "Summer", year: i)
+    Semester.create(season: "Fall", year: i)
+end
+
+# Projects (a project is a class with a semester, studens and teacher assigned)
+Project.create(course_id: 1, semester_id: 1)
+
+Project.create(course_id: 2, semester_id: 2)
+
+Project.create(course_id: 3, semester_id: 3)
+
+Project.create(course_id: 1, semester_id: 4)
+
+Project.create(course_id: 2, semester_id: 5)
+
+Project.create(course_id: 3, semester_id: 6)
