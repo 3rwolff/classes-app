@@ -8,13 +8,6 @@ body {
     padding: 60px;
 }
 
-a {
-    &:hover {
-        /*transform: scale(1.1);*/
-        /*font-weight: bold;*/
-    }
-}
-
 h1 {
     color: #264D6B;
     margin: 0px !important;
@@ -50,6 +43,11 @@ thead {
     color: white;
     background-color: #264D6B;
 }
+code { 
+    background-color: white;
+    color:  #264D6B;
+}
+
 #logo {
     color: white;
     font-size: 18pt;
@@ -140,4 +138,12 @@ thead {
 
 .green_icon {
     color: #264d6b;
+}
+
+.project {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14pt;
+    margin: 10px 10px;
 }

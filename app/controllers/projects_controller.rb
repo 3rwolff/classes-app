@@ -1,4 +1,4 @@
-class ProjectController < ApplicationController
+class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
@@ -6,6 +6,7 @@ class ProjectController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @students = ProjectStudent.where(project_id: params[:id])
   end
   
 end
