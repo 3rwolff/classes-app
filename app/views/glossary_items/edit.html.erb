@@ -11,7 +11,7 @@
         <%= f.text_area :definition, class: 'form-control' %>
 
         <%= f.label :category %>
-        <%= f.text_field :glossary_category_id, class: 'form-control' %>
+        <%= f.collection_select :glossary_category_id, GlossaryCategory.order(:name), :id, :name, {include_blank: true}, {class: 'form-control'} %>
 
         <%= f.submit "Update", class: "btn btn-primary" %>
     <% end %>

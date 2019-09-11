@@ -133,9 +133,9 @@ Project.create!(course_id: 3, semester_id: 6)
 #######################
 # Glossary Categories
 #######################
-GlossaryCategory.create!(name: "2D", color_code: "99FFFF")
+GlossaryCategory.create!(name: "2D", color_code: "FF8888")
 GlossaryCategory.create!(name: "3D", color_code: "FFFF99")
-GlossaryCategory.create!(name: "Math", color_code: "99FFFF")
+GlossaryCategory.create!(name: "Math", color_code: "FF8888")
 GlossaryCategory.create!(name: "Code", color_code: "FFFFFF")
 
 # Glossary Items
