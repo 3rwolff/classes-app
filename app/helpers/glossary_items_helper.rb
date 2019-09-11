@@ -1,0 +1,2 @@
+module GlossaryItemsHelper
+end

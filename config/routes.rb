@@ -1,8 +1,20 @@
 Rails.application.routes.draw do
 
-  get 'glossaries/index'
+  get 'glossary_items/edit'
 
-  get 'glossaries/show'
+  get 'glossary_items/update'
+
+  get 'glossary_items/destroy'
+
+  # get 'glossary_items/edit'
+
+  # get 'glossary_items/update'
+
+  # get 'glossary_items/destroy'
+
+  # get 'glossaries/index'
+
+  # get 'glossaries/show'
 
   # get 'users/index'
   # get 'users/show'
@@ -10,6 +22,7 @@ Rails.application.routes.draw do
   resources :users
   resources :projects
   resources :glossaries
+  resources :glossary_items
 
   devise_for :users
     root 'courses#index'

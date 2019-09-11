@@ -4,5 +4,6 @@ class GlossariesController < ApplicationController
   end
 
   def show
+    @item = GlossaryItem(params[:id])
   end
 end
