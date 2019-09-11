@@ -1,0 +1,14 @@
+<table class="table table-striped table-bordered">
+    <thead>
+        <td>Title</td>
+        <td>Definition</td>
+        <td>Category</td>
+    </thead>
+    <% @items.each do |item|%>
+    <tr>
+        <td><%= item.title %></td>
+        <td><%= item.definition %></td>
+        <td><%= GlossaryCategory.find(item.glossary_category_id).name %></td>
+    </tr>
+    <% end %>
+</table>

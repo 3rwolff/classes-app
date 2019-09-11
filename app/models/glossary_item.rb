@@ -1,3 +1,3 @@
 class GlossaryItem < ApplicationRecord
-  belongs_to :GlossaryCategory
+  belongs_to :glossary_category
 end

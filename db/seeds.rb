@@ -1,4 +1,6 @@
+###########
 # Users
+###########
 User.create!( name: "Ricky",
               email: "ricky@bigsouthernsoftware.com",
               password:              "ffffff",
@@ -30,7 +32,9 @@ User.where("id is not 1").each do |user| # set the rest of the users as students
     UserRole.create!(user_id: user.id , role_id: 1)
 end
 
+###########
 # Courses
+###########
 Course.create!( name: "Breakout",
                 main_video_id: "breakout.png",
                 description: Faker::Lorem.paragraph(sentence_count: 10))
@@ -43,8 +47,7 @@ Course.create!( name: "Pong",
                 main_video_id: "pong.png",
                 description: Faker::Lorem.paragraph(sentence_count: 10))
 
-# Sections
-
+# Modules (Chapters)
 CourseModule.create!( title: "HTML Canvas",
                       description: Faker::Lorem.paragraph(sentence_count: 10),
                       video_id: "no_photo.png",
@@ -79,14 +82,18 @@ CourseModule.create!( title: "Vectors & Points",
                     course_module_id: i)
 end
 
+#############
 # Semesters
+#############
 (2019..2020).each do |i|
     Semester.create(season: "Spring", year: i)
     Semester.create(season: "Summer", year: i)
     Semester.create(season: "Fall", year: i)
 end
 
+############
 # Projects (a project is a class with a semester, studens and teacher assigned)
+###########
 Project.create!(course_id: 1, semester_id: 1)
     ProjectTeacher.create!(user_id: 1, project_id: 1)
     User.order("RANDOM()").limit(rand(5..10)).each do |student|
@@ -123,19 +130,21 @@ Project.create!(course_id: 3, semester_id: 6)
         ProjectStudent.create!(user_id: student.id, project_id: 6)
     end
 
+#######################
 # Glossary Categories
+#######################
 GlossaryCategory.create!(name: "2D", color_code: "99FFFF")
 GlossaryCategory.create!(name: "3D", color_code: "FFFF99")
 GlossaryCategory.create!(name: "Math", color_code: "99FFFF")
 GlossaryCategory.create!(name: "Code", color_code: "FFFFFF")
 
 # Glossary Items
-GlossaryItem.create!(title: "Class", description: "This is a class")
-GlossaryItem.create!(title: "HTML", description: "This is a HTML")
-GlossaryItem.create!(title: "Loop", description: "This is a Loop")
-GlossaryItem.create!(title: "Recursion", description: "This is a Recursion")
-GlossaryItem.create!(title: "Tag", description: "This is a Tag")
-GlossaryItem.create!(title: "Variable", description: "This is a Variable")
-GlossaryItem.create!(title: "Vector", description: "This is a Vector")
+GlossaryItem.create!(title: "Class", definition: "This is a class", glossary_category_id: 4)
+GlossaryItem.create!(title: "HTML", definition: "This is a HTML", glossary_category_id: 4)
+GlossaryItem.create!(title: "Loop", definition: "This is a Loop", glossary_category_id: 4)
+GlossaryItem.create!(title: "Recursion", definition: "This is a Recursion", glossary_category_id: 1)
+GlossaryItem.create!(title: "Tag", definition: "This is a Tag", glossary_category_id: 2)
+GlossaryItem.create!(title: "Variable", definition: "This is a Variable", glossary_category_id: 4)
+GlossaryItem.create!(title: "Vector", definition: "This is a Vector", glossary_category_id: 3)
 
 
